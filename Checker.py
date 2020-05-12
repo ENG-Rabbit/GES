@@ -1,7 +1,5 @@
-import sys
-sys.path.append("./") 
-from Smart_Home.Object import Object
-from Smart_Home.Hex import is_hex,hexe,inttohex
+from Smart_Home.Class.Object import Object
+from Smart_Home.Class.Hex import is_hex,hexe,inttohex
 #from Furniture import Furniture
 
 default_location = {"Table":[],"Home":[],"Mobile":[]}

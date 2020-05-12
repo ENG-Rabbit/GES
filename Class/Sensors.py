@@ -1,9 +1,6 @@
-import sys
-sys.path.append("./") 
-from Smart_Home.Methods import States
+from Smart_Home.Class.Methods import States
 #from .Attributes import *
-#from random import randint
-from Smart_Home.Object import Object
+from Smart_Home.Class.Object import Object
 
 class Sensor(Object):
     Sensor_List = []

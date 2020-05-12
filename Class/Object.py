@@ -1,6 +1,4 @@
 #from .Hex import is_hex
-
-
 class Object:
     object_list = []
     def __init__(self,name = "",code = "",location = "",*args,**kwargs):

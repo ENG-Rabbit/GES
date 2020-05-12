@@ -1,12 +1,10 @@
-import sys
-sys.path.append("./") 
-from Smart_Home.Subject import Subject
-from Smart_Home.Furniture import *
-from Smart_Home.main import *
-from Smart_Home.Attributes import *
-from Smart_Home.Methods import States
-from Smart_Home.Checker import default_location
-from Smart_Home.Question import Quest
+from .Subject import Subject
+from Smart_Home.Class.Furniture import Lamp,Lamps
+#from Smart_Home.main import *
+from Smart_Home.Class.Attributes import Sound,Picture,light
+from Smart_Home.Class.Methods import States
+from .Checker import default_location
+from .Question import Quest
 
 
 
@@ -148,10 +146,10 @@ class Add:
             except:
                 print(str(type(sub)) + " can't do that.")
                 continue
-    pass
+    
 
-#print()
-Verb("اضافه کردن",object = lamp3, place="Room")
+
+#Verb("اضافه کردن",object = lamp3, place="Room")
 
 
 

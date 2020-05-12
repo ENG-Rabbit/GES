@@ -1,6 +1,4 @@
-import sys
-sys.path.append("./")  
-from Smart_Home.Hex import hexe,is_hex,inttohex,hextoint
+from Smart_Home.Class.Hex import hexe,is_hex,inttohex,hextoint
 
 
 class light:

@@ -1,14 +1,9 @@
-#import sys
-#sys.path.append("./") 
-#print(sys.path)
-from Smart_Home.Hex import is_hex,inttohex
-from Smart_Home.Attributes import light,Sound,Picture
-from Smart_Home.Methods import States,Rotate
-from Smart_Home.Object import Object
-from Smart_Home.Sensors import temp_hum_S
+from Smart_Home.Class.Hex import is_hex,inttohex
+from Smart_Home.Class.Attributes import light,Sound,Picture
+from Smart_Home.Class.Methods import States,Rotate
+from Smart_Home.Class.Object import Object
+from Smart_Home.Class.Sensors import temp_hum_S
 from Smart_Home.Checker import codes
-#import gc
-#import weakref
 
 
 def code_finder():

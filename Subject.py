@@ -1,7 +1,5 @@
-import sys
-sys.path.append("./") 
-from Smart_Home.Furniture import Furniture
-from Smart_Home.Checker import default_location
+from Smart_Home.Class.Furniture import Furniture
+from .Checker import default_location
 
 
 class_names = []
