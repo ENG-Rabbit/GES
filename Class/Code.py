@@ -10,20 +10,21 @@ class Code:
     def __init__(self,value = "#"):
         try:
             self.code = int(value[1:],16)
-            code_list.append(self.code)
         except:
             raise ValueError("Code Has Wrong Format!")
+        Code.code_list.append(self.code)
     #Dtypes
     def __str__(self):
-        return "#" + str(self.code)
+        return "#" + hex(self.code).lstrip("0x")
 
     def __int__(self):
         return self.code
 
     def __float__(self):
         raise ValueError("Code can't be float!")
+
     def __hex__(self):
-        return "#" + hex(self.code)[2:]
+        return "#" + hex(self.code).lstrip("0x")
     #Oprators
     ##adds
     def __add__(self,other):
@@ -145,5 +146,3 @@ def is_hex(num = None):
     else:
         return None
 """
-#code = Code("#ff")
-#print(hex(code))
