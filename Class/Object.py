@@ -1,4 +1,3 @@
-#from .Hex import is_hex
 class Object:
     object_list = []
     def __init__(self,name = "",code = "",location = "",*args,**kwargs):
@@ -8,6 +7,3 @@ class Object:
         self.Location = location
     def __str__(self):
         return self.name
-
-
-#print(Object.object_list)

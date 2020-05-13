@@ -1,4 +1,4 @@
-from Smart_Home.Class.Hex import is_hex,inttohex
+from Smart_Home.Class.Code import is_hex,inttohex
 from Smart_Home.Class.Attributes import light,Sound,Picture
 from Smart_Home.Class.Methods import States,Rotate
 from Smart_Home.Class.Object import Object
