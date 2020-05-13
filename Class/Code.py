@@ -8,11 +8,16 @@ class Code:
     code_list = []
 
     def __init__(self,value = "#"):
-        try:
+        self.val = value
+        if self.is_code():
             self.code = int(value[1:],16)
-        except:
+        else:
             raise ValueError("Code Has Wrong Format!")
-        Code.code_list.append(self.code)
+        del value
+        del self.val
+        if not self.code in Code.code_list:
+            Code.code_list.append(self.code)
+
     #Dtypes
     def __str__(self):
         return "#" + hex(self.code).lstrip("0x")
@@ -114,35 +119,25 @@ class Code:
             return -(self.code)
         else:
             return self.code
-
-    def Create_code(self):
-        pass
-"""
-def inttohex(num = None,dig=None):
-    let = {15:"f",14:"e",13:"d",12:"c",11:"b",10:"a",9:"9",8:"8",7:"7",6:"6",5:"5",4:"4",3:"3",2:"2",1:"1",0:"0"}
-    ith = ""
-    while 1:
-        h = num % 16
-        num = num//16
-        if h in let.keys():
-            ith = let[h] + ith
-        if num == 0:
-            break
+    def is_code(self):
+        if type(self.val) is str and self.val[0] == "#" and len(self.val) == 4:
+            return True
+        else:
+            return False
+def Create_code():
+    for i in range(1,4096):
+            if not i in Code.code_list:
+               i = inttohex(i,3)
+               break
+    return i
+def inttohex(num=0,dig=None):
+    ith = hex(num).lstrip("0x")
     hash_dig =  "#"
     if dig is None:
         dig = len(ith)
     elif type(dig) == int:
-        for i in range(dig-len(ith)):
-            hash_dig +=  "0"
-    ith = hash_dig + ith
-    del let
-    return ith
-def is_hex(num = None):
-    if num:
-        if type(num) is str and num[0]=="#":
-            return True
-        else:
-            return False
+            hash_dig +=  ("0" * (dig-len(ith)))
     else:
-        return None
-"""
+        return "Can't do that!"
+    return hash_dig + ith
+
