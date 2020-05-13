@@ -1,124 +1,122 @@
-class hexe():
+class Code:
     """
     str --> hex(with or without \"#\") to int
 
     int --> int to hex
     """
-    def __init__(self,value = 00):
-        self.Hnum = hextoint(value)
+
+    code_list = []
+
+    def __init__(self,value = "#"):
+        try:
+            self.code = int(value[1:],16)
+            code_list.append(self.code)
+        except:
+            raise ValueError("Code Has Wrong Format!")
     #Dtypes
     def __str__(self):
-        return str(self.Hnum)
+        return "#" + str(self.code)
 
     def __int__(self):
-        return int(self.Hnum)
+        return self.code
 
     def __float__(self):
-        raise ValueError("HEX can't be float!")
+        raise ValueError("Code can't be float!")
+    def __hex__(self):
+        return "#" + hex(self.code)[2:]
     #Oprators
     ##adds
     def __add__(self,other):
-        return self.Hnum + hextoint(other)
+        return self.code + int(other,16)
     
     def __radd__(self,other):
-        return hextoint(other) + self.Hnum 
+        return int(other,16) + self.code 
 
     def __iadd__(self,other):
-        return hextoint(other) + self.Hnum 
+        return int(other,16) + self.code 
     ##subs
     def __sub__(self,other):
-        return self.Hnum - hextoint(other)
+        return self.code - int(other,16)
     
     def __rsub__(self,other):
-        return hextoint(other) - self.Hnum 
+        return int(other,16) - self.code 
 
     def __isub__(self,other):
-        return hextoint(other) - self.Hnum 
+        return int(other,16) - self.code 
     ##multiple
     def __mul__(self,other):
-        return self.Hnum * hextoint(other)
+        return self.code * int(other,16)
     
     def __rmul__(self,other):
-        return hextoint(other) * self.Hnum 
+        return int(other,16) * self.code 
 
     def __imul__(self,other):
-        return hextoint(other) * self.Hnum 
+        return int(other,16) * self.code 
     ##division
     def __div__(self,other):
-        return self.Hnum / hextoint(other)
+        return self.code / int(other,16)
     
     def __rdiv__(self,other):
-        return hextoint(other) / self.Hnum 
+        return int(other,16) / self.code 
 
     def __idiv__(self,other):
-        return hextoint(other) / self.Hnum 
+        return int(other,16) / self.code 
     ##floordiv
     def __floordiv__(self,other):
-        return self.Hnum // hextoint(other)
+        return self.code // int(other,16)
     
     def __rfloordiv__(self,other):
-        return hextoint(other) // self.Hnum 
+        return int(other,16) // self.code 
 
     def __ifloordiv__(self,other):
-        return hextoint(other) // self.Hnum 
+        return int(other,16) // self.code 
     ##power
     def __pow__(self,other):
-        return self.Hnum ** hextoint(other)
+        return self.code ** int(other,16)
     
     def __rpow__(self,other):
-        return hextoint(other) ** self.Hnum 
+        return int(other,16) ** self.code 
 
     def __ipow__(self,other):
-        return hextoint(other) ** self.Hnum 
+        return int(other,16) ** self.code 
     ##power
     def __mod__(self,other):
-        return self.Hnum % hextoint(other)
+        return self.code % int(other,16)
     
     def __rmod__(self,other):
-        return hextoint(other) % self.Hnum 
+        return int(other,16) % self.code 
 
     def __imod__(self,other):
-        return hextoint(other) % self.Hnum 
+        return int(other,16) % self.code 
     #Logical
     def __lt__(self, other):
-        return hextoint(other) > self.Hnum
+        return int(other,16) > self.code
     def __gt__(self, other):
-        return hextoint(other) < self.Hnum
+        return int(other,16) < self.code
     def __le__(self, other):
-        return hextoint(other) >= self.Hnum
+        return int(other,16) >= self.code
     def __ge__(self, other):
-        return hextoint(other) <= self.Hnum
+        return int(other,16) <= self.code
     def __eq__(self, other):
-        return hextoint(other) == self.Hnum
+        return int(other,16) == self.code
     def __ne__(self, other):
-        return hextoint(other) != self.Hnum
+        return int(other,16) != self.code
     #other
+    """
     def __neg__(self):
-        return -(self.Hnum)
+        return -(self.code)
     def __pos__(self):
-        return +(self.Hnum)
+        return +(self.code)
+    """
     def __abs__(self):
-        if self.Hnum < 0:
-            return -(self.Hnum)
+        if self.code < 0:
+            return -(self.code)
         else:
-            return self.Hnum
-def hextoint(num = None):
-    if type(num) is int:
-        return num
-    #num = num.lower()
-    digits = {"f":15,"e":14,"d":13,"c":12,"b":11,"a":10,"F":15,"E":14,"D":13,"C":12,"B":11,"A":10,"9":9,"8":8,"7":7,"6":6,"5":5,"4":4,"3":3,"2":2,"1":1,"0":0}
-    hti = 0
-    i = 0
-    if num[0] == "#":
-            num = num[1:]
-    for j in range(1,len(num)+1):
-        if num[-j] in digits.keys():
-            hti = hti + digits[num[-j]]*(16**i)
-            i +=1
-        else:
-            raise ValueError("hex don't have {}.".format(num[-j]))
-    del digits
-    return hti
+            return self.code
+
+    def Create_code(self):
+        pass
+"""
 def inttohex(num = None,dig=None):
     let = {15:"f",14:"e",13:"d",12:"c",11:"b",10:"a",9:"9",8:"8",7:"7",6:"6",5:"5",4:"4",3:"3",2:"2",1:"1",0:"0"}
     ith = ""
@@ -146,3 +144,6 @@ def is_hex(num = None):
             return False
     else:
         return None
+"""
+#code = Code("#ff")
+#print(hex(code))
