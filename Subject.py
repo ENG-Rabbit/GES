@@ -1,5 +1,5 @@
 from Smart_Home.Class.Furniture import Furniture
-from .Checker import default_location
+from Smart_Home.Checker import default_location
 
 
 class_names = []

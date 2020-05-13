@@ -1,17 +1,10 @@
-from Smart_Home.Class.Hex import is_hex,inttohex
+from Smart_Home.Class.Code import inttohex,Code
 from Smart_Home.Class.Attributes import light,Sound,Picture
 from Smart_Home.Class.Methods import States,Rotate
 from Smart_Home.Class.Object import Object
 from Smart_Home.Class.Sensors import temp_hum_S
-from Smart_Home.Checker import codes
 
 
-def code_finder():
-    for i in range(1,4096):
-                if not i in codes:
-                   i = inttohex(i,3)
-                   break
-    return i
 
 
 class Furniture(States,Object):

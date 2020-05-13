@@ -1,6 +1,6 @@
-from Class.Object import Object
+from Smart_Home.Class.Object import Object
 #from Smart_Home.Class.Code import is_hex,hexe,inttohex
-from Class.Code import Code,Create_code
+from Smart_Home.Class.Code import Code,Create_code
 #from Furniture import Furniture
 
 default_location = {"Table":[],"Home":[],"Mobile":[]}
