@@ -1,9 +1,9 @@
 from Smart_Home.Class.Object import Object
-from Smart_Home.Class.Hex import is_hex,hexe,inttohex
+#from Smart_Home.Class.Code import is_hex,hexe,inttohex
+from Smart_Home.Class.Code import Code,Create_code
 #from Furniture import Furniture
 
 default_location = {"Table":[],"Home":[],"Mobile":[]}
-codes = []
 names = []
 
 def Check():
@@ -15,17 +15,10 @@ def Check():
                 default_location[obj.Location].append(obj)
             else:
                 print("Wrong name in {}.".format(obj.Location))
-        if not int(hexe(obj.code)) in codes:
-            codes.append(int(hexe(str(obj.code))))
-            codes.sort()
-        else:
+        if obj.code in Code.code_list:
             print("Wrong code!")
             print("You can choose:",end=" ")
-            for i in range(1,4096):
-                if not i in codes:
-                   i = inttohex(i,3)
-                   break
-            print(str(i),end=" ")
+            print(Create_code(),end=" ")
             print("instead {} in {}".format(obj.code,obj.Location))
 
 
