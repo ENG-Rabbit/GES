@@ -1,3 +1,7 @@
+if __name__ == "__main__":
+    print(__name__)
+else:
+    print(1212)
 class Code:
     """
     str --> hex(with or without \"#\") to int
