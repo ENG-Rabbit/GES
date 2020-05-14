@@ -1,4 +1,4 @@
-from Smart_Home.Class.Code import Code,inttohex
+from .Class.Code import Code,inttohex
 
 
 class light:

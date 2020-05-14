@@ -1,9 +1,9 @@
-from Code import inttohex
-from Code import Code
-from Smart_Home.Class.Attributes import light,Sound,Picture
-from Smart_Home.Class.Methods import States,Rotate
-from Smart_Home.Class.Object import Object
-from Smart_Home.Class.Sensors import temp_hum_S
+from .Code import inttohex
+from .Code import Code
+from .Class.Attributes import light,Sound,Picture
+from .Class.Methods import States,Rotate
+from .Class.Object import Object
+from .Class.Sensors import temp_hum_S
 
 
 if __name__ == "__main__":

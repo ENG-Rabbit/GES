@@ -1,10 +1,10 @@
-from Smart_Home.Subject import Subject
-from Smart_Home.Class.Furniture import Lamp,Lamps
+from .Subject import Subject
+from .Class.Furniture import Lamp,Lamps
 #from Smart_Home.main import *
-from Smart_Home.Class.Attributes import Sound,Picture,light
-from Smart_Home.Class.Methods import States
-from Smart_Home.Checker import default_location
-from Smart_Home.Question import Quest
+from .Class.Attributes import Sound,Picture,light
+from .Class.Methods import States
+from .Checker import default_location
+from .Question import Quest
 
 
 

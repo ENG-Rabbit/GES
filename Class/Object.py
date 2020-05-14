@@ -1,4 +1,4 @@
-from Smart_Home.Class.Code import Code,Create_code
+from .Class.Code import Code,Create_code
 class Object:
     object_list = []
     def __init__(self,name = "",code = None,location = "",*args,**kwargs):

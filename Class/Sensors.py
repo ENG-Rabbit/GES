@@ -1,6 +1,6 @@
-from Smart_Home.Class.Methods import States
+from .Class.Methods import States
 #from .Attributes import *
-from Smart_Home.Class.Object import Object
+from .Class.Object import Object
 
 class Sensor(Object):
     Sensor_List = []
